@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "402346477473",
+    "project_id": "fir-chat-e08da",
+    "storage_bucket": "fir-chat-e08da.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:402346477473:android:008d3de7c440bb62622de0",
+        "android_client_info": {
+          "package_name": "com.example.telegram"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "402346477473-a6brq8h294bnhvhnaggig8uk7b9im4tt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.telegram",
+            "certificate_hash": "9deb92af31288d46f4a5dda05d647f1933dedfec"
+          }
+        },
+        {
+          "client_id": "402346477473-62qqs74lt84k64gpne3lgep7ggmgr0n0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHS72pcOjNyQIpCsw72ROLEsaOV6woJZ4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "402346477473-62qqs74lt84k64gpne3lgep7ggmgr0n0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
