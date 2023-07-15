@@ -2,7 +2,7 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:telegram/service/ImagePickerService.dart';
+import 'package:telegram/service/ImagePickerService_for_message.dart';
 import 'package:telegram/service/fireStorageService.dart';
 import 'package:telegram/service/fireStore_Service.dart';
 
