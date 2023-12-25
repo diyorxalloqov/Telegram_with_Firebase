@@ -2,9 +2,9 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:telegram/service/ImagePickerService_for_message.dart';
-import 'package:telegram/service/fireStorageService.dart';
-import 'package:telegram/service/fireStore_Service.dart';
+import 'package:Firebase_chat_app/service/ImagePickerService_for_message.dart';
+import 'package:Firebase_chat_app/service/fireStorageService.dart';
+import 'package:Firebase_chat_app/service/fireStore_Service.dart';
 
 class ImagePickerWidget extends StatefulWidget {
   final dynamic title;

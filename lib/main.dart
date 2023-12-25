@@ -1,13 +1,15 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:telegram/provider/auth/sign_in_provider.dart';
-import 'package:telegram/provider/auth/sign_up_provider.dart';
-import 'package:telegram/provider/messageProvider.dart';
-import 'package:telegram/ui/pages/splashPage.dart';
+import 'package:Firebase_chat_app/db/shared.dart';
+import 'package:Firebase_chat_app/provider/auth/sign_in_provider.dart';
+import 'package:Firebase_chat_app/provider/auth/sign_up_provider.dart';
+import 'package:Firebase_chat_app/provider/messageProvider.dart';
+import 'package:Firebase_chat_app/ui/pages/splashPage.dart';
 
 void main(List<String> args) async {
   WidgetsFlutterBinding.ensureInitialized();
+  await StorageRepository.getInstance();
   await Firebase.initializeApp();
   runApp(const MyApp());
 }

@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:telegram/service/fireStore_Service.dart';
+import 'package:Firebase_chat_app/service/fireStore_Service.dart';
 
 class MessageProvider extends ChangeNotifier {
   bool isLoading = false;

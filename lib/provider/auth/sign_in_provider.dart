@@ -1,7 +1,7 @@
+import 'package:Firebase_chat_app/ui/pages/home_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-import '../../ui/pages/homePage.dart';
 
 class SignInProvider extends ChangeNotifier {
   TextEditingController emailController = TextEditingController();

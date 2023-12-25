@@ -1,9 +1,11 @@
-// ignore_for_file: avoid_function_literals_in_foreach_calls, non_constant_identifier_names, unused_local_variable
+// ignore_for_file: avoid_function_literals_in_foreach_calls, non_constant_identifier_names, unused_local_variable, use_build_context_synchronously
 
+import 'package:Firebase_chat_app/ui/pages/home_page.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:telegram/ui/pages/homePage.dart';
+import 'package:Firebase_chat_app/db/shared.dart';
+import 'package:Firebase_chat_app/ui/pages/voice_chat.dart';
 
 class SignUpProvider extends ChangeNotifier {
   TextEditingController emailController = TextEditingController();
@@ -33,12 +35,14 @@ class SignUpProvider extends ChangeNotifier {
           .then((QuerySnapshot querySnapshot) {
         querySnapshot.docs.forEach((DocumentSnapshot docSnapshot) {
           usersList.add(docSnapshot.data() as Map<String, dynamic>);
+          List<String> usersListAsString =
+              usersList.map((user) => user.toString()).toList();
+          StorageRepository.putList('users', usersListAsString);
         });
       });
-      
 
       Navigator.push(
-          context, MaterialPageRoute(builder: (context) => HomePage()));
+          context, MaterialPageRoute(builder: (context) => const HomePage()));
     } on FirebaseAuthException catch (e) {
       if (e.code == "weak-password") {
         error = "Parolingiz juda kuchsiz";

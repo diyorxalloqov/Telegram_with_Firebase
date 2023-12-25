@@ -1,12 +1,10 @@
-// ignore_for_file: unused_local_variable
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:telegram/provider/messageProvider.dart';
-import 'package:telegram/service/fireStore_Service.dart';
-import 'package:telegram/ui/widgets/image_picker_Widget.dart';
+import 'package:Firebase_chat_app/provider/messageProvider.dart';
+import 'package:Firebase_chat_app/service/fireStore_Service.dart';
+import 'package:Firebase_chat_app/ui/widgets/image_picker_Widget.dart';
 
 class MessagePage extends StatefulWidget {
   const MessagePage({super.key});
@@ -25,20 +23,6 @@ class _MessagePageState extends State<MessagePage> {
     Size mQ = MediaQuery.sizeOf(context);
 
     MessageProvider messageProvider = Provider.of<MessageProvider>(context);
-
-    String selectedOption = '';
-
-    List<String> options = [
-      "Add to Favourites",
-      "Add to Folder",
-      "Hide",
-      "Go to first message",
-      "Hide pinned message",
-      "Unmute",
-      "Report",
-      "Delete User",
-    ];
-
     return ChangeNotifierProvider(
       create: (context) => MessageProvider(),
       builder: (context, child) => Scaffold(
@@ -58,40 +42,6 @@ class _MessagePageState extends State<MessagePage> {
               style: const TextStyle(color: Colors.white54),
             ),
           ),
-          actions: [
-            PopupMenuButton<String>(
-              color: Colors.blueGrey.shade200,
-              icon: const Icon(Icons.more_vert, color: Colors.white),
-              itemBuilder: (BuildContext context) {
-                return options.map((String option) {
-                  return PopupMenuItem<String>(
-                    value: option,
-                    child: Text(option),
-                  );
-                }).toList();
-              },
-              onSelected: (String newValue) {
-                setState(() {
-                  selectedOption = newValue;
-                });
-              },
-            ),
-            // Text.rich(
-            //   TextSpan(
-            //     children: [
-            //       WidgetSpan(
-            //         child: Padding(
-            //           padding: EdgeInsets.only(
-            //               left:
-            //                   5), // Add some spacing between the icon and text
-            //           child: Icon(Icons.add),
-            //         ),
-            //       ),
-            //     ],
-            //     text: 'Add to Favorites',
-            //   ),
-            // )
-          ],
         ),
         body: SizedBox(
           width: mQ.width,
@@ -139,8 +89,8 @@ class _MessagePageState extends State<MessagePage> {
                                     child: Align(
                                       alignment:
                                           data[index]["from"] == _user.email
-                                              ? Alignment.centerRight
-                                              : Alignment.centerLeft,
+                                              ? Alignment.centerLeft
+                                              : Alignment.centerRight,
                                       child: Padding(
                                         padding: const EdgeInsets.all(8.0),
                                         child: Container(
@@ -213,28 +163,16 @@ class _MessagePageState extends State<MessagePage> {
                                         padding: const EdgeInsets.all(8.0),
                                         child: data[index]['from'] ==
                                                 _user.email
-                                            ? Padding(
-                                                padding: EdgeInsets.only(
-                                                    left: mQ.width * 0.5),
-                                                child: Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.min,
-                                                  crossAxisAlignment:
-                                                      CrossAxisAlignment.start,
-                                                  children: [
-                                                    Text(
-                                                      data[index]['message'],
-                                                      style: const TextStyle(
-                                                          backgroundColor:
-                                                              Colors.white,
-                                                          fontSize: 17,
-                                                          overflow: TextOverflow
-                                                              .ellipsis,
-                                                          color: Colors.black),
-                                                    ),
-                                                  ],
-                                                ),
-                                              )
+                                            ? Text(
+                                              data[index]['message'],
+                                              style: const TextStyle(
+                                                  backgroundColor:
+                                                      Colors.white,
+                                                  fontSize: 17,
+                                                  overflow: TextOverflow
+                                                      .ellipsis,
+                                                  color: Colors.black),
+                                            )
                                             : Text(data[index]['message'],
                                                 style: const TextStyle(
                                                     backgroundColor:
@@ -265,15 +203,8 @@ class _MessagePageState extends State<MessagePage> {
                 textAlign: TextAlign.start,
                 decoration: InputDecoration(
                   border: InputBorder.none,
-                  hintText: "Message",
+                  hintText: 'message',
                   hintStyle: const TextStyle(color: Colors.black),
-                  prefixIcon: IconButton(
-                    onPressed: () {},
-                    icon: const Icon(
-                      Icons.tag_faces,
-                      color: Colors.blueGrey,
-                    ),
-                  ),
                   suffixIcon: Row(
                     mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.end,
@@ -286,7 +217,7 @@ class _MessagePageState extends State<MessagePage> {
                                   title: Text("Faylni tanlang")));
                         },
                         icon: const Icon(
-                          Icons.file_open_outlined,
+                          Icons.file_copy_outlined,
                           color: Colors.blueGrey,
                         ),
                       ),
@@ -297,9 +228,7 @@ class _MessagePageState extends State<MessagePage> {
                               : messageProvider.sendMessage();
                         },
                         icon: messageProvider.isLoading
-                            ? const Center(
-                                child: CircularProgressIndicator.adaptive(),
-                              )
+                            ? const CircularProgressIndicator.adaptive()
                             : const Icon(
                                 Icons.send,
                               ),
