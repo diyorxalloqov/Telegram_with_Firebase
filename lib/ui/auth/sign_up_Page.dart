@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../provider/auth/sign_up_provider.dart';
+import '../../view_model/provider/auth/sign_up_provider.dart';
 
 class SignUpPage extends StatelessWidget {
   const SignUpPage({super.key});

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>402346477473-a6brq8h294bnhvhnaggig8uk7b9im4tt.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDLVd2q1EfYaH_NGasKXOIAaMftVACLTEc</string>
+	<key>GCM_SENDER_ID</key>
+	<string>402346477473</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.telegram</string>
+	<key>PROJECT_ID</key>
+	<string>fir-chat-e08da</string>
+	<key>STORAGE_BUCKET</key>
+	<string>fir-chat-e08da.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:402346477473:ios:36164c1a5bd737e2622de0</string>
+</dict>
+</plist>

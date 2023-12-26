@@ -14,9 +14,9 @@ import 'package:permission_handler/permission_handler.dart';
 import 'package:provider/provider.dart';
 import 'package:record_mp3/record_mp3.dart';
 import 'package:Firebase_chat_app/model/chat_model.dart';
-import 'package:Firebase_chat_app/provider/chat_provider.dart';
-import 'package:Firebase_chat_app/provider/messageProvider.dart';
-import 'package:Firebase_chat_app/service/audio_service.dart';
+import 'package:Firebase_chat_app/view_model/provider/chat/chat_provider.dart';
+import 'package:Firebase_chat_app/view_model/provider/chat/messageProvider.dart';
+import 'package:Firebase_chat_app/repository/service/audio_service.dart';
 
 class VoiceChat extends StatefulWidget {
   const VoiceChat({Key? key}) : super(key: key);

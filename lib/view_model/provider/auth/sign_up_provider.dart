@@ -4,8 +4,6 @@ import 'package:Firebase_chat_app/ui/pages/home_page.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:Firebase_chat_app/db/shared.dart';
-import 'package:Firebase_chat_app/ui/pages/voice_chat.dart';
 
 class SignUpProvider extends ChangeNotifier {
   TextEditingController emailController = TextEditingController();
@@ -37,7 +35,7 @@ class SignUpProvider extends ChangeNotifier {
           usersList.add(docSnapshot.data() as Map<String, dynamic>);
           List<String> usersListAsString =
               usersList.map((user) => user.toString()).toList();
-          StorageRepository.putList('users', usersListAsString);
+          // StorageRepository.putList('users', usersListAsString);
         });
       });
 

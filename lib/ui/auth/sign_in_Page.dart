@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:Firebase_chat_app/ui/auth/sign_up_Page.dart';
 
-import '../../provider/auth/sign_in_provider.dart';
+import '../../view_model/provider/auth/sign_in_provider.dart';
 
 class SignInPage extends StatelessWidget {
   const SignInPage({super.key});
